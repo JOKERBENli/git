@@ -487,47 +487,57 @@ git branch dev01
 
 将上一节中的.gitignore提交，并查看分支：
 
-
 将当前分支切换到dev01
-SH
-1
+
+```
 git checkout dev01
+```
+
+
 
 
 同时观察到，test目录下的.gitignore消失了
 
 重新切换到master分支，.gitignore又出现了。新建分支dev02，并同时切换到上面
-SH
-1
+
+```
 git checkout -b dev02
+```
+
+
 
 
 切换到dev01分支，并新建文件file03.txt，并提交
 
-
 切换到master分支，并将dev01的提交合并到master上
-SH
-1
-2
+
+```
 git checkout master
 git merge dev01
+```
+
+
 
 
 此时，可以看到在master分支下的仓库中，有了file03.txt
 
 删除dev02分支
-SH
-1
+
+```
 git branch -d dev02
+```
+
 
 
 2） 示例2——解决冲突
 删除分支dev01，创建并切换到分支dev上。此时master和dev分支上的file01.txt文件中内容都为update_count = 1
-SH
-1
-2
+
+```
 git branch -d dev01
 git checkout -b dev
+```
+
+
 
 
 
@@ -537,11 +547,13 @@ git checkout -b dev
 
 在master分支上修改file01.txt文件内容为update_count = 3，并提交
 
-
 将dev分支合并到master分支上，发现报错。查看file01.txt内容
-SH
-1
+
+```
 git merge dev
+```
+
+
 
 
 
